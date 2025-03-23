@@ -1,21 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package checkboxes;
 
 /**
- *
- * @author FATEC ZONA LESTE
+ * Implementação concreta da interface Checkbox para o sistema Windows.
+ * 
+ * Esta classe representa uma caixa de seleção estilizada para o ambiente Windows, garantindo que,
+ * ao ser renderizada, ela siga o padrão visual e comportamental esperado para esse sistema operacional.
+ * 
+ * O uso desse design permite criar interfaces gráficas flexíveis e compatíveis com diferentes plataformas.
  */
-// Implementação da caixa de seleção específica para Windows.  
 public class WindowsCheckbox implements Checkbox {  
 
-    // Sobrescreve o método paint() para exibir a caixa de seleção no estilo Windows.  
+    /**
+     * Renderiza a caixa de seleção no estilo Windows.
+     * 
+     * Em um ambiente gráfico real, esse método seria responsável por exibir uma caixa de seleção com
+     * a aparência nativa do Windows. Aqui, para fins de demonstração, apenas imprime uma mensagem no console.
+     */
     @Override  
     public void paint() {  
-        System.out.println("You have created WindowsCheckbox."); // Exibe uma mensagem indicando a criação da caixa de seleção.  
+        System.out.println("You have created WindowsCheckbox."); // Simula a renderização da caixa de seleção no Windows.
     }  
-}  
-
+}
 
