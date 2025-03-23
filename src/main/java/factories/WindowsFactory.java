@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package factories;
 
 import buttons.Button;
@@ -10,25 +6,40 @@ import checkboxes.Checkbox;
 import checkboxes.WindowsCheckbox;
 
 /**
- *
- * @author FATEC ZONA LESTE
+ * Fábrica concreta para criação de componentes gráficos no estilo Windows.
+ * 
+ * Esta classe implementa a interface GUIFactory e define a lógica para criar 
+ * elementos de interface gráfica compatíveis com o ambiente Windows. 
+ * 
+ * Ela segue o padrão Abstract Factory, garantindo que a aplicação possa criar 
+ * componentes gráficos com aparência e comportamento padronizados para esse sistema operacional.
+ * Isso permite que a interface da aplicação se adapte ao ambiente em que está sendo executada.
  */
-// A classe WindowsFactory implementa a interface GUIFactory.
-// WindowsFactory é responsável por criar os componentes gráficos específicos para o sistema operacional Windows.
 public class WindowsFactory implements GUIFactory {
 
-    // Este método cria um botão específico para o Windows.
-    // Quando chamado, ele retorna um novo objeto da classe WindowsButton, que é uma implementação do botão para o Windows.
+    /**
+     * Cria um botão estilizado para o Windows.
+     * 
+     * Esse método retorna um objeto da classe WindowsButton, garantindo que o 
+     * botão renderizado tenha a aparência e o comportamento característicos do Windows.
+     * 
+     * @return uma instância de WindowsButton.
+     */
     @Override
     public Button createButton() {
-        return new WindowsButton(); // Retorna um botão Windows.
+        return new WindowsButton();  
     }
 
-    // Este método cria uma caixa de seleção específica para o Windows.
-    // Quando chamado, ele retorna um novo objeto da classe WindowsCheckbox, que é uma implementação da caixa de seleção para o Windows.
+    /**
+     * Cria uma caixa de seleção estilizada para o Windows.
+     * 
+     * Esse método retorna uma instância de WindowsCheckbox, assegurando que a caixa de seleção 
+     * renderizada tenha o design e o comportamento esperados no ambiente Windows.
+     * 
+     * @return uma instância de WindowsCheckbox.
+     */
     @Override
     public Checkbox createCheckbox() {
-        return new WindowsCheckbox(); // Retorna uma caixa de seleção Windows.
+        return new WindowsCheckbox();  
     }
 }
-
