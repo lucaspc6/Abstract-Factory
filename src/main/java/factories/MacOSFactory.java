@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package factories;
 
 import buttons.Button;
@@ -10,25 +6,40 @@ import checkboxes.Checkbox;
 import checkboxes.MacOSCheckbox;
 
 /**
- *
- * @author FATEC ZONA LESTE
+ * Fábrica concreta para criação de componentes gráficos no estilo macOS.
+ * 
+ * Esta classe implementa a interface GUIFactory e fornece a lógica para criar 
+ * elementos de interface gráfica específicos do macOS. Ela segue o padrão Abstract Factory, 
+ * permitindo que a aplicação crie botões e caixas de seleção compatíveis com esse sistema operacional.
+ * 
+ * Dessa forma, se a aplicação estiver rodando no macOS, esta fábrica será utilizada para garantir 
+ * que os elementos gráficos sigam a aparência e comportamento esperados nesse ambiente.
  */
-// A classe MacOSFactory implementa a interface GUIFactory.
-// MacOSFactory é responsável por criar os componentes gráficos específicos para o sistema operacional macOS.
 public class MacOSFactory implements GUIFactory {
 
-    // Este método cria um botão específico para o macOS.
-    // Quando chamado, ele retorna um novo objeto da classe MacOSButton, que é uma implementação do botão para o macOS.
+    /**
+     * Cria um botão estilizado para o macOS.
+     * 
+     * Quando este método é chamado, ele retorna um objeto da classe MacOSButton,
+     * garantindo que o botão renderizado siga o design característico do macOS.
+     * 
+     * @return uma instância de MacOSButton.
+     */
     @Override
     public Button createButton() {
-        return new MacOSButton();  // Retorna um botão macOS.
+        return new MacOSButton();  
     }
 
-    // Este método cria uma caixa de seleção específica para o macOS.
-    // Quando chamado, ele retorna um novo objeto da classe MacOSCheckbox, que é uma implementação da caixa de seleção para o macOS.
+    /**
+     * Cria uma caixa de seleção estilizada para o macOS.
+     * 
+     * Este método retorna uma instância de MacOSCheckbox, assegurando que a caixa de seleção 
+     * renderizada siga a aparência nativa do macOS.
+     * 
+     * @return uma instância de MacOSCheckbox.
+     */
     @Override
     public Checkbox createCheckbox() {
-        return new MacOSCheckbox();  // Retorna uma caixa de seleção macOS.
+        return new MacOSCheckbox();  
     }
 }
-
