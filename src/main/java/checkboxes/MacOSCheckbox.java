@@ -1,20 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package checkboxes;
 
 /**
- *
- * @author FATEC ZONA LESTE
+ * Implementação concreta da interface Checkbox para o sistema macOS.
+ * 
+ * Essa classe representa uma caixa de seleção estilizada para o ambiente macOS, garantindo que,
+ * ao ser renderizada, siga o padrão visual e comportamental esperado para esse sistema operacional.
+ * 
+ * Esse design permite criar componentes gráficos flexíveis e desacoplados, facilitando a implementação 
+ * de diferentes estilos de UI para múltiplas plataformas.
  */
-// Implementação da caixa de seleção específica para macOS.  
 public class MacOSCheckbox implements Checkbox {  
 
-    // Sobrescreve o método paint() para exibir a caixa de seleção no estilo macOS.  
+    /**
+     * Renderiza a caixa de seleção no estilo macOS.
+     * 
+     * Em uma aplicação real, esse método seria responsável por desenhar uma caixa de seleção com o design do macOS 
+     * dentro de uma interface gráfica. Aqui, para fins de demonstração, apenas exibe uma mensagem no console.
+     */
     @Override  
     public void paint() {  
-        System.out.println("You have created MacOSCheckbox."); // Exibe uma mensagem indicando a criação da caixa de seleção.  
+        System.out.println("You have created MacOSCheckbox."); // Simula a criação da caixa de seleção no macOS.
     }  
 }  
 
