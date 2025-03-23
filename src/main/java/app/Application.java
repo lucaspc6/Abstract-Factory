@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package app;
 
 import buttons.Button;
@@ -9,23 +5,35 @@ import checkboxes.Checkbox;
 import factories.GUIFactory;
 
 /**
- *
- * @author FATEC ZONA LESTE
+ * A classe Application atua como um cliente para a fábrica abstrata (GUIFactory).
+ * Ela utiliza a fábrica fornecida para criar componentes gráficos (botão e caixa de seleção)
+ * sem depender diretamente de implementações específicas.
+ * 
+ * Isso permite que a aplicação funcione com diferentes estilos de interface gráfica
+ * (exemplo: Windows, macOS, Linux) sem modificar o código da classe.
  */
-// A classe Application usa os objetos Button e Checkbox para criar e desenhar uma interface gráfica.
 public class Application {
-    private Button button;    // Declaração de um botão.
-    private Checkbox checkbox; // Declaração de uma caixa de seleção.
+    private Button button;    // Botão da interface gráfica, criado dinamicamente.
+    private Checkbox checkbox; // Caixa de seleção da interface gráfica, criada dinamicamente.
 
-    // O construtor recebe (GUIFactory) e usa ela para criar o botão e a caixa de seleção.
+    /**
+     * Construtor da aplicação.
+     * Recebe uma fábrica concreta (GUIFactory), que determina o estilo dos componentes visuais.
+     * Essa abordagem segue o padrão Abstract Factory, garantindo flexibilidade e desacoplamento.
+     *
+     * @param factory Uma fábrica específica que cria os componentes gráficos.
+     */
     public Application(GUIFactory factory) {
-        button = factory.createButton();  // Cria o botão usando a Factory.
-        checkbox = factory.createCheckbox(); // Cria a caixa de seleção usando a Factory.
+        button = factory.createButton();  // Instancia um botão com base na fábrica fornecida.
+        checkbox = factory.createCheckbox(); // Instancia uma caixa de seleção com base na fábrica fornecida.
     }
 
-    // Método para desenhar o botão e a caixa de seleção.
+    /**
+     * Renderiza os componentes gráficos da aplicação.
+     * Chama os métodos de desenho do botão e da caixa de seleção para exibição na tela.
+     */
     public void paint() {
-        button.paint();    // Desenha o botão.
-        checkbox.paint();  // Desenha a caixa de seleção.
+        button.paint();    // Aciona o método de desenho do botão.
+        checkbox.paint();  // Aciona o método de desenho da caixa de seleção.
     }
 }
