@@ -1,20 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package buttons;
 
 /**
- *
- * @author FATEC ZONA LESTE
+ * Implementação concreta da interface Button para o sistema MacOS.
+ * 
+ * Esta classe representa um botão estilizado para o ambiente MacOS, garantindo que,
+ * ao ser renderizado, siga a aparência e o comportamento esperados para este sistema operacional.
  */
-// A classe MacOSButton implementa a interface Button e define como o botão será desenhado no MacOS.
 public class MacOSButton implements Button {
 
-    // Implementação do método 'paint' que imprime uma mensagem no console.
+    /**
+     * Renderiza o botão na interface gráfica.
+     * 
+     * No contexto real, esse método poderia ser responsável por desenhar um botão com a estética do MacOS
+     * em uma GUI. Aqui, para fins de demonstração, apenas exibe uma mensagem no console.
+     */
     @Override
     public void paint() {
-        System.out.println("You have created MacOSButton.");
+        System.out.println("You have created MacOSButton."); // Simulação da renderização do botão MacOS.
     }
 }
+
 
