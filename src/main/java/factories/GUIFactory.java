@@ -1,24 +1,37 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package factories;
 
 import buttons.Button;
 import checkboxes.Checkbox;
 
 /**
- * A interface GUIFactory serve como um contrato para criar elementos de interface gráfica.
- * Ela garante que qualquer classe que a implementar terá métodos para criar um botão e uma caixa de seleção.
+ * Interface GUIFactory - Fábrica abstrata para criação de componentes gráficos.
  * 
- * @author FATEC ZONA LESTE
+ * Essa interface define um contrato para a criação de elementos de interface gráfica, 
+ * garantindo que qualquer implementação concreta forneça métodos para criar botões e caixas de seleção.
+ * 
+ * O padrão Factory permite que diferentes sistemas operacionais tenham implementações específicas 
+ * desses componentes, tornando o código mais flexível e adaptável a múltiplas plataformas.
  */
-public interface GUIFactory {  // Define a interface GUIFactory. Uma interface não implementa métodos, ela apenas define quais métodos as classes que a implementarem precisam fornecer.
-    
-    // Método que as classes que implementam a interface devem fornecer. Ele cria um botão.
+public interface GUIFactory {  
+
+    /**
+     * Cria um botão específico para a plataforma correspondente.
+     * 
+     * Implementações concretas dessa interface devem fornecer a lógica para criar botões no 
+     * estilo do sistema operacional em que a aplicação está rodando (ex: Windows, macOS).
+     *
+     * @return um objeto que implementa a interface Button.
+     */
     Button createButton();  
     
-    // Método que as classes que implementam a interface devem fornecer. Ele cria uma caixa de seleção.
+    /**
+     * Cria uma caixa de seleção específica para a plataforma correspondente.
+     * 
+     * Implementações concretas dessa interface devem fornecer a lógica para criar caixas de seleção 
+     * no estilo do sistema operacional em que a aplicação está rodando.
+     *
+     * @return um objeto que implementa a interface Checkbox.
+     */
     Checkbox createCheckbox();  
     
 }  
